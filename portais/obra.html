@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8">
+<script>
+fetch("../core/base.html").then(r=>r.text()).then(t=>{
+  document.open(); document.write(
+    t.replaceAll("{{titulo}}","Obra")
+     .replace("{{lead}}","Aqui começa a construção. O visitante torna-se coautor — onde visão e ação se fundem em forma.")
+     .replace("{{conteudo}}", `<ul>
+        <li>💬 Falar direto no WhatsApp ou e-mail;</li>
+        <li>📅 Agendar uma conversa de alinhamento;</li>
+        <li>🪶 Assinar o manifesto e integrar a rede.</li>
+      </ul>`)
+     .replace("{{botoes}}", `<a class="btn" href="#" onclick="startTransition('container','../portais/horizonte.html')">Voltar ao Horizonte</a>
+                              <a class="btn" href="#" onclick="startTransition('container','../portais/convite.html')">Voltar ao Convite</a>
+                              <a class="btn" href="https://wa.me/5567999999999" target="_blank">Participar da Obra</a>
+                              <a class="btn" href="../painel.html">↩️ Painel</a>`)
+     .replace("{{scripts}}","")
+  ); document.close();
+});
+</script>

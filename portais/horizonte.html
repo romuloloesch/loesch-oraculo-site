@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8">
+<script>
+fetch("../core/base.html").then(r=>r.text()).then(t=>{
+  document.open(); document.write(
+    t.replaceAll("{{titulo}}","Horizonte")
+     .replace("{{lead}}","O horizonte se abre. Consolidamos visão, ritmo e rituais.")
+     .replace("{{conteudo}}","")
+     .replace("{{botoes}}", `<a class="btn" href="#" onclick="startTransition('container','../portais/travessia.html')">Voltar à Travessia</a>
+                              <a class="btn" href="#" onclick="startTransition('container','../portais/convite.html')">Voltar ao Convite</a>
+                              <a class="btn" href="#" onclick="startTransition('container','../portais/obra.html')">Abrir próximo portal</a>
+                              <a class="btn" href="../painel.html">↩️ Painel</a>`)
+     .replace("{{scripts}}","")
+  ); document.close();
+});
+</script>
+

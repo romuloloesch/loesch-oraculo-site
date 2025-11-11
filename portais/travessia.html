@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8">
+<script>
+fetch("../core/base.html").then(r=>r.text()).then(t=>{
+  document.open(); document.write(
+    t.replaceAll("{{titulo}}","Travessia")
+     .replace("{{lead}}","Bem-vindo ao segundo passo. Aqui o convite vira caminho: presença humana + visão oracular.")
+     .replace("{{conteudo}}","")
+     .replace("{{botoes}}", `<a class="btn" href="#" onclick="startTransition('container','../portais/convite.html')">Voltar ao Convite</a>
+                              <a class="btn" href="#" onclick="startTransition('container','../portais/horizonte.html')">Seguir adiante</a>
+                              <a class="btn" href="../painel.html">↩️ Painel</a>`)
+     .replace("{{scripts}}","")
+  ); document.close();
+});
+</script>

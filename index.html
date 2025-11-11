@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convite — Loesch & Oráculo</title>
+  <style>
+    :root{
+      --bg:#0b0b0d; --bg2:#111218; --fg:#e9e9ee; --muted:#b9bcc7;
+      --gold:#d4af37; --gold-2:#c8a028; --ring: rgba(212,175,55,0.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--fg);
+      background: radial-gradient(1200px 800px at 70% -10%, rgba(212,175,55,0.07), transparent 60%),
+                  radial-gradient(900px 600px at 0% 100%, rgba(212,175,55,0.05), transparent 60%),
+                  var(--bg);
+      display:grid; place-items:center; overflow:hidden;
+      font: 400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+    }
+    .wrap{
+      width:min(960px,92vw); padding:clamp(20px,4vw,40px); border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+      border:1px solid rgba(212,175,55,.18);
+      box-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 0 8px rgba(212,175,55,.04) inset;
+      transition:opacity .5s ease, transform .5s ease;
+    }
+    .brand{display:flex;align-items:center;gap:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:14px}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--gold);box-shadow:0 0 18px var(--ring)}
+    h1{margin:0 0 10px;font-size:clamp(28px,4.2vw,54px);line-height:1.08;font-weight:800;letter-spacing:.01em;
+        background:linear-gradient(180deg,#fff,#e8e8ef 45%,#cfcfe0);-webkit-background-clip:text;background-clip:text;color:transparent;
+        filter:drop-shadow(0 3px 25px rgba(212,175,55,.12))}
+    .lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);margin:0 0 28px}
+    .card{margin:22px 0 34px;padding:18px 20px;background:linear-gradient(180deg,rgba(212,175,55,.08),rgba(212,175,55,.03));
+          border:1px solid rgba(212,175,55,.22);border-radius:18px;color:#f2f1f7}
+    .cta{
+      display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;
+      border:1px solid rgba(212,175,55,.3);
+      background:radial-gradient(120% 180% at 10% 0%, rgba(212,175,55,.24), transparent 60%),
+                 linear-gradient(180deg, rgba(212,175,55,.20), rgba(212,175,55,.10));
+      color:#121217;font-weight:700;letter-spacing:.02em;text-decoration:none;cursor:pointer;user-select:none;
+      box-shadow:0 6px 28px rgba(212,175,55,.22),0 1px 0 0 rgba(255,255,255,.15) inset;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .cta .pill{padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.28);color:#f6f3e6;font-size:.85rem;font-weight:600;border:1px solid rgba(255,255,255,.08)}
+    .cta:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.5);box-shadow:0 10px 36px rgba(212,175,55,.28),0 1px 0 0 rgba(255,255,255,.18) inset}
+    .cta:active{transform:translateY(0)}
+    .footer{margin-top:16px;font-size:.9rem;color:#9ea3b3}
+    .enter{opacity:0;transform:translateY(12px)}
+    .leaving{opacity:0;transform:translateY(-8px)}
+    @media (prefers-reduced-motion: reduce){.wrap,.cta{transition:none !important}}
+  </style>
+</head>
+<body>
+  <main class="wrap enter" id="container">
+    <div class="brand"><span class="dot" aria-hidden="true"></span><span>Loesch & Oráculo</span></div>
+    <h1>Convite para a Travessia</h1>
+    <p class="lead">Você está recebendo um convite para atravessar com a gente — com leveza, precisão e um toque de ouro.</p>
+    <div class="card"><strong>O que esperar:</strong> presença humana, visão oracular e um percurso claro. Ao avançar, você será conduzido à <em>travessia</em> com uma transição suave.</div>
+    <button id="cta" class="cta" aria-label="Iniciar a Travessia">
+      <span>Iniciar a Travessia</span><span class="pill">segundo passo</span>
+    </button>
+    <div class="footer">© Loesch & Oráculo — todos os direitos reservados</div>
+  </main>
+  <script>
+    const container = document.getElementById('container');
+    requestAnimationFrame(()=>container.classList.remove('enter'));
+    document.getElementById('cta').addEventListener('click', (e)=>{
+      e.preventDefault();
+      container.classList.add('leaving');
+      setTimeout(()=>{ window.location.href = "../travessia/index.html"; }, 480);
+    });
+  </script>
+</body>
+</html>
+

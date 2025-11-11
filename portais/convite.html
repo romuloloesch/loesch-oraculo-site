@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8">
+<script>
+fetch("../core/base.html").then(r=>r.text()).then(t=>{
+  document.open(); document.write(
+    t.replaceAll("{{titulo}}","Convite")
+     .replace("{{lead}}","Você está recebendo um convite para atravessar com a gente — com leveza, precisão e um toque de ouro.")
+     .replace("{{conteudo}}","")
+     .replace("{{botoes}}", `<a class="btn" href="#" onclick="startTransition('container','../portais/travessia.html')">Iniciar a Travessia</a>
+                              <a class="btn" href="../painel.html">↩️ Voltar ao Painel</a>`)
+     .replace("{{scripts}}","")
+  ); document.close();
+});
+</script>

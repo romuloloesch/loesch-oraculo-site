@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Modular Oracular</title>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #0b0b0b;
+      --text: #e5e5e5;
+      --shadow: rgba(212,175,55,0.2);
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    main {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 12px var(--shadow);
+    }
+
+    p {
+      color: #c9c9c9;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    a.btn {
+      display: block;
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      border-radius: 12px;
+      color: var(--gold);
+      padding: 14px 0;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 12px rgba(212,175,55,0.1);
+    }
+
+    a.btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px var(--shadow);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: none; }
+      from { opacity: 0; transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="fade-in">
+    <h1>⚜ Painel Oracular</h1>
+    <p>Escolha um portal para abrir ou testar as transições da jornada:</p>
+
+    <div class="grid">
+      <a href="./portais/convite.html" class="btn">✨ Convite</a>
+      <a href="./portais/travessia.html" class="btn">🌒 Travessia</a>
+      <a href="./portais/horizonte.html" class="btn">🌕 Horizonte</a>
+      <a href="./portais/obra.html" class="btn">⚙️ Obra</a>

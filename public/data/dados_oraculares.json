@@ -1,0 +1,11 @@
+{
+  "periodo": "hoje",
+  "impressoes": 1234,
+  "cliques": 89,
+  "ctr_medio": 7.21,
+  "posicao_media": 3.1,
+  "paises": [
+    {"pais": "Brasil", "impressoes": 1000, "cliques": 80, "ctr": 8.0},
+    {"pais": "Portugal", "impressoes": 234, "cliques": 9, "ctr": 3.8}
+  ]
+}

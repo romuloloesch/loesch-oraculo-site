@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travessia — Loesch & Oráculo</title>
+  <style>
+    :root{
+      --bg:#0b0b0d; --bg2:#0f1116; --fg:#e9e9ee; --muted:#b9bcc7;
+      --gold:#d4af37; --ring: rgba(212,175,55,0.35);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; color:var(--fg);
+      background: radial-gradient(1100px 700px at 15% -20%, rgba(212,175,55,.07), transparent 60%),
+                  radial-gradient(900px 600px at 100% 100%, rgba(212,175,55,.05), transparent 60%),
+                  var(--bg2);
+      display:grid; place-items:center; overflow:hidden;
+      font: 400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+    }
+    .wrap{
+      width:min(1000px,92vw); padding:clamp(22px,4vw,44px); border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+      border:1px solid rgba(212,175,55,.18);
+      box-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 0 8px rgba(212,175,55,.04) inset;
+      transition:opacity .5s ease, transform .5s ease;
+    }
+    .brand{display:flex;align-items:center;gap:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:14px}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--gold);box-shadow:0 0 18px var(--ring)}
+    h1{margin:0 0 12px;font-size:clamp(28px,4.2vw,50px);line-height:1.08;font-weight:800;letter-spacing:.01em;
+        background:linear-gradient(180deg,#fff,#e8e8ef 45%,#cfcfe0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);margin:0 0 26px}
+    .pane{
+      display:grid; gap:16px; grid-template-columns: 1fr;
+      background:linear-gradient(180deg, rgba(212,175,55,.06), rgba(212,175,55,.02));
+      border:1px solid rgba(212,175,55,.22); border-radius:18px; padding:18px;
+    }
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .tag{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.28);color:#f6f3e6;font-weight:600;font-size:.85rem}
+    .actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:1px solid rgba(212,175,55,.3);
+         background:linear-gradient(180deg, rgba(212,175,55,.20), rgba(212,175,55,.10));
+         color:#121217;font-weight:700;letter-spacing:.02em;text-decoration:none;cursor:pointer;user-select:none;
+         box-shadow:0 6px 22px rgba(212,175,55,.18),0 1px 0 0 rgba(255,255,255,.15) inset;
+         transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.5)}
+    .enter{opacity:0;transform:translateY(12px)} .leaving{opacity:0;transform:translateY(-8px)}
+    @media (prefers-reduced-motion: reduce){.wrap,.btn{transition:none !important}}
+  </style>
+</head>
+<body>
+  <main class="wrap enter" id="container">
+    <div class="brand"><span class="dot" aria-hidden="true"></span><span>Loesch & Oráculo</span></div>
+    <h1>Travessia</h1>
+    <p class="lead">Bem-vindo ao segundo passo. Aqui o convite vira caminho: presença humana + visão oracular, com estratégia, automação e precisão silenciosa.</p>
+
+    <section class="pane" role="region" aria-label="Próximos passos">
+      <div class="row">
+        <span class="tag">Alinhar propósito</span>
+        <span class="tag">Definir mapa</span>
+        <span class="tag">Ativar painéis</span>
+        <span class="tag">Iterar entregas</span>
+      </div>
+      <div class="actions">
+        <a id="seguir" class="btn" href="#">Seguir adiante</a>
+        <a id="voltar" class="btn" href="#">Voltar ao Convite</a>
+      </div>
+    </section>
+  </main>
+  <script>
+  const container = document.getElementById('container');
+  requestAnimationFrame(()=>container.classList.remove('enter'));
+
+  document.getElementById('voltar').addEventListener('click',(e)=>{
+    e.preventDefault(); container.classList.add('leaving');
+    setTimeout(()=>{ window.location.href = "../convite/index.html"; }, 480);
+  });
+
+  document.getElementById('seguir').addEventListener('click',(e)=>{
+    e.preventDefault(); container.classList.add('leaving');
+    setTimeout(()=>{ window.location.href = "../terceira/index.html"; }, 480);
+  });
+</script>
+

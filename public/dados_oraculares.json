@@ -1,0 +1,35 @@
+{
+  "periodo": "auto",
+  "impressoes": 0,
+  "cliques": 100,
+  "ctr_medio": 0.0,
+  "posicao_media": 3.1,
+  "paises": [
+    {
+      "pais": "Brasil",
+      "impressoes": 0,
+      "cliques": 90,
+      "ctr": 0.0
+    },
+    {
+      "pais": "Portugal",
+      "impressoes": 0,
+      "cliques": 10,
+      "ctr": 0.0
+    }
+  ],
+  "historico": [
+    {
+      "ts": 1762744117,
+      "impressoes": 0,
+      "cliques": 100,
+      "ctr": 0.0
+    },
+    {
+      "ts": 1762744121,
+      "impressoes": 0,
+      "cliques": 100,
+      "ctr": 0.0
+    }
+  ]
+}
