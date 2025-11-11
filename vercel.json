@@ -1,4 +1,11 @@
 {
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/convite",   "destination": "/convite.html" },
+    { "source": "/travessia", "destination": "/travessia.html" },
+    { "source": "/horizonte", "destination": "/horizonte.html" },
+    { "source": "/obra",      "destination": "/obra.html" }
+  ],
   "redirects": [
     { "source": "/", "destination": "/convite", "permanent": false }
   ]
