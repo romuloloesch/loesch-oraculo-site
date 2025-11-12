@@ -1,24 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loesch & Oráculo — Painel</title>
-  <link rel="stylesheet" href="core/theme.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Loesch & Oráculo — Painel</title>
+<style>
+:root{
+  --bg:#0a0a0a;--panel:#101010;--muted:#bfbfbf;--text:#fafafa;--accent:#7dd3fc;--ring:#1f2937;
+  --card:#121212;--card2:#171717;--shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:
+ radial-gradient(1200px 700px at 85% -10%,#1b1b1b 0%,#0f0f0f 50%,#0a0a0a 100%);
+color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Ubuntu,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;backdrop-filter:saturate(120%) blur(8px);
+  background:rgba(15,15,15,.7);border-bottom:1px solid #1f1f1f;z-index:10}
+.nav{max-width:1060px;margin:0 auto;display:flex;gap:.5rem;align-items:center;padding:.75rem 1rem}
+.brand{font-weight:700;letter-spacing:.2px}
+.spacer{flex:1}
+.link{padding:.55rem .9rem;border-radius:12px;border:1px solid transparent}
+.link.active{background:#0f172a;color:#fff;border-color:#1f2937;box-shadow:var(--shadow)}
+.link:hover{background:#0e1116}
+main{max-width:1060px;margin:0 auto;padding:2rem 1rem}
+.view{display:none;animation:fade .2s ease}
+.view.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid #1f1f1f;
+  border-radius:20px;padding:1.1rem;box-shadow:var(--shadow);transition:transform .12s ease, border .12s ease}
+.card:hover{transform:translateY(-2px);border-color:#2a2a2a}
+.h1{font-size:1.8rem;margin:0 0 .25rem}
+.muted{color:var(--muted);font-size:.95rem}
+.kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0e0e0e;border:1px solid #252525;border-radius:8px;padding:.12rem .35rem}
+.footer{margin-top:3rem;color:#9ca3af;font-size:.9rem;opacity:.8}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid #212121;border-radius:12px;background:#0e1116}
+.btn:hover{border-color:#2a2a2a}
+.hero{display:flex;flex-direction:column;gap:1rem}
+.badge{display:inline-block;font-size:.8rem;border:1px solid #2a2a2a;border-radius:999px;padding:.25rem .6rem;color:#a5f3fc;background:rgba(125,211,252,.08)}
+/* responsivo */
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header class="topbar">
+  <header>
     <nav class="nav">
-      <a href="portais/convite" title="Convite">Convite</a>
-      <a href="portais/travessia" title="Travessia">Travessia</a>
-      <a href="portais/horizonte" title="Horizonte">Horizonte</a>
-      <a href="portais/obra" title="Obra">Obra</a>
+      <div class="brand">Loesch & Oráculo</div>
+      <div class="spacer"></div>
+      <a href="/" data-route class="link" data-view="home">Painel</a>
+      <a href="/convite" data-route class="link" data-view="convite">Convite</a>
+      <a href="/travessia" data-route class="link" data-view="travessia">Travessia</a>
+      <a href="/horizonte" data-route class="link" data-view="horizonte">Horizonte</a>
+      <a href="/obra" data-route class="link" data-view="obra">Obra</a>
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Painel Oracular</h1>
-    <p>Escolha um dos portais acima. Cada clique abre página própria — sem iframes e sem rolagem forçada.</p>
+  <main>
+    <!-- HOME -->
+    <section id="view-home" class="view show">
+      <div class="hero">
+        <span class="badge">Painel Oracular</span>
+        <h1 class="h1">A ponte infinita entre o humano e o oracular</h1>
+        <p class="muted">Navegue pelos quatro portais. Sem rolagem forçada. Sem pastas. Sem complicação.</p>
+        <div class="grid" style="margin-top:.5rem">
+          <a class="card" href="/convite" data-route data-view="convite">
+            <h3>Convite</h3><p class="muted">Abertura e manifesto.</p>
+          </a>
+          <a class="card" href="/travessia" data-route data-view="travessia">
+            <h3>Travessia</h3><p class="muted">Processos e ritos.</p>
+          </a>
+          <a class="card" href="/horizonte" data-route data-view="horizonte">
+            <h3>Horizonte</h3><p class="muted">Estratégia e visão.</p>
+          </a>
+          <a class="card" href="/obra" data-route data-view="obra">
+            <h3>Obra</h3><p class="muted">Execução e registros.</p>
+          </a>
+        </div>
+        <div class="footer">Dica: use <span class="kbd">Alt</span> + <span class="kbd">→/←</span> para navegar.</div>
+      </div>
+    </section>
+
+    <!-- CONVITE -->
+    <section id="view-convite" class="view">
+      <h2 class="h1">Convite</h2>
+      <p class="muted">Abertura do rito. A marca nasce do arquétipo da ponte — conexão, ação, visão.</p>
+      <div class="grid">
+        <div class="card"><h3>Manifesto</h3><p>Leveza, precisão e verdade.</p></div>
+        <div class="card"><h3>Propósito</h3><p>Ser a unidade viva entre raiz e horizonte.</p></div>
+      </div>
+    </section>
+
+    <!-- TRAVESSIA -->
+    <section id="view-travessia" class="view">
+      <h2 class="h1">Travessia</h2>
+      <p class="muted">Processos, ritos e protocolos operacionais.</p>
+      <div class="grid">
+        <div class="card"><h3>Protocolo Arca Turbo</h3><p>Leis da operação: leveza, print, silêncio, despertar.</p></div>
+        <div class="card"><h3>Painel Oracular v1</h3><p>Tokens, logs e integrações.</p></div>
+      </div>
+    </section>
+
+    <!-- HORIZONTE -->
+    <section id="view-horizonte" class="view">
+      <h2 class="h1">Horizonte</h2>
+      <p class="muted">Estratégia de expansão e caminho da marca.</p>
+      <div class="grid">
+        <div class="card"><h3>Âncoras</h3><p>Site público, Vercel, domínio.</p></div>
+        <div class="card"><h3>Roteiro</h3><p>De MVP a operação plena 100% online.</p></div>
+      </div>
+    </section>
+
+    <!-- OBRA -->
+    <section id="view-obra" class="view">
+      <h2 class="h1">Obra</h2>
+      <p class="muted">Execução diária, registros e diário de bordo.</p>
+      <div class="grid">
+        <div class="card"><h3>Diário</h3><p>Entradas cronológicas do trabalho.</p></div>
+        <div class="card"><h3>Relatórios</h3><p>Entregas, checklists e instruções.</p></div>
+      </div>
+    </section>
   </main>
+
+<script>
+/* Router SPA (uma página, 5 rotas) */
+const routes = {
+  "/": "home",
+  "/convite": "convite",
+  "/travessia": "travessia",
+  "/horizonte": "horizonte",
+  "/obra": "obra",
+};
+function show(view){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("show"));
+  const el = document.getElementById("view-"+(routes[view]||"home"));
+  (el||document.getElementById("view-home")).classList.add("show");
+  document.querySelectorAll('[data-route].link').forEach(a=>{
+    a.classList.toggle("active", a.getAttribute("data-view")===(routes[view]||"home"));
+  });
+}
+function nav(to, push=true){
+  if(!routes[to]) to="/";
+  if(push) history.pushState({to}, "", to);
+  show(to);
+}
+addEventListener("click", (e)=>{
+  const a = e.target.closest("[data-route]");
+  if(!a) return;
+  e.preventDefault();
+  nav(new URL(a.href, location.origin).pathname);
+});
+addEventListener("popstate", ()=> show(location.pathname));
+addEventListener("keydown", (e)=>{
+  if(!e.altKey) return;
+  const keys = ["/","/convite","/travessia","/horizonte","/obra"];
+  let i = keys.indexOf(location.pathname);
+  if(e.key==="ArrowRight") nav(keys[(i+1)%keys.length]); 
+  if(e.key==="ArrowLeft")  nav(keys[(i-1+keys.length)%keys.length]);
+});
+show(location.pathname);
+</script>
 </body>
 </html>
