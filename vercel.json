@@ -1,10 +1,5 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/",           "destination": "/portais/convite.html" },
-    { "source": "/convite",    "destination": "/portais/convite.html" },
-    { "source": "/travessia",  "destination": "/portais/travessia.html" },
-    { "source": "/horizonte",  "destination": "/portais/horizonte.html" },
-    { "source": "/obra",       "destination": "/portais/obra.html" }
-  ]
+  "trailingSlash": false,
+  "outputDirectory": "public"
 }

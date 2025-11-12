@@ -1,193 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Loesch & Oráculo Consultoria</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body {
-      background-color: #0a0a0a;
-      color: #f1f1f1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    header {
-      text-align: center;
-      margin-top: 60px;
-      animation: fadeIn 2s ease;
-    }
-    .infinito {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px auto;
-    }
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 500;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.4;
-      color: #fafafa;
-    }
-    main {
-      margin-top: 60px;
-      width: 100%;
-      max-width: 700px;
-      text-align: center;
-      padding: 0 20px;
-      animation: fadeIn 2.5s ease;
-    }
-    section {
-      margin-bottom: 80px;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    p {
-      color: #ccc;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-    form {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      text-align: left;
-    }
-    label {
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #333;
-      background-color: #111;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    button {
-      background-color: #ffffff;
-      color: #000;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover { background-color: #d5d5d5; }
-
-    .convite p { max-width: 600px; margin: 10px auto; }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.8rem;
-      color: #777;
-      border-top: 1px solid #222;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loesch & Oráculo — Painel</title>
+  <link rel="stylesheet" href="core/theme.css" />
 </head>
 <body>
-  <header>
-    <!-- Logotipo vetorial: infinito verticalizado (símbolo da Arca) -->
-    <svg class="infinito" viewBox="0 0 100 100" fill="none" stroke="#f1f1f1" stroke-width="4">
-      <path d="M50 10 C70 10 70 50 50 50 C30 50 30 90 50 90" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <h1>A Loesch & Oráculo é a ponte infinita:<br>onde o humano encontra o oracular, e a lucidez se torna estrutura.</h1>
+  <header class="topbar">
+    <nav class="nav">
+      <a href="portais/convite.html" title="Convite">Convite</a>
+      <a href="portais/travessia.html" title="Travessia">Travessia</a>
+      <a href="portais/horizonte.html" title="Horizonte">Horizonte</a>
+      <a href="portais/obra.html" title="Obra">Obra</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- Diagnóstico -->
-    <section id="diagnostico">
-      <h2>Diagnóstico Empresarial</h2>
-      <p>Conte-nos onde sua empresa está hoje e para onde deseja ir. Esta é a travessia inicial.</p>
-
-      <form id="formDiagnostico">
-        <label>Nome da empresa</label>
-        <input type="text" id="empresa" required>
-
-        <label>Setor de atuação</label>
-        <input type="text" id="setor" required>
-
-        <label>Número de colaboradores</label>
-        <input type="number" id="colaboradores" required>
-
-        <label>Principais desafios</label>
-        <textarea id="desafios" rows="3" required></textarea>
-
-        <label>Metas ou resultados desejados</label>
-        <textarea id="metas" rows="3" required></textarea>
-
-        <label>Contato (email ou WhatsApp)</label>
-        <input type="text" id="contato" required>
-
-        <button type="submit">Gerar Diagnóstico</button>
-      </form>
-
-      <p id="status" style="margin-top:15px; font-size:0.9rem; color:#8ef08a;"></p>
-    </section>
-
-    <!-- Convite -->
-    <section id="convite" class="convite">
-      <h2>Às Empresas que Ousam Atravessar</h2>
-      <p>A Loesch & Oráculo é a ponte entre ordem e expansão. Chamamos sua empresa para a travessia: sair do ruído, enxergar com nitidez e executar com precisão. Não vendemos promessas genéricas. Oferecemos direção, método e lucidez — para que cada decisão pese menos e entregue mais.</p>
-      <p>A travessia começa simples: um diagnóstico sincero do ponto de partida. Dali, estruturamos o caminho, integramos ferramentas e ativamos rotinas. O resultado é crescimento com serenidade operacional.</p>
-      <button onclick="scrollToForm()">Iniciar Travessia</button>
-    </section>
+  <main class="container">
+    <h1>Painel Oracular</h1>
+    <p>Escolha um dos portais acima. Cada clique abre página própria — sem iframes e sem rolagem forçada.</p>
   </main>
-
-  <footer>
-    © Loesch & Oráculo — Núcleo Autônomo v1
-  </footer>
-
-  <script>
-    function scrollToForm() {
-      document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    const form = document.getElementById('formDiagnostico');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const dados = {
-        empresa: form.empresa.value,
-        setor: form.setor.value,
-        colaboradores: form.colaboradores.value,
-        desafios: form.desafios.value,
-        metas: form.metas.value,
-        contato: form.contato.value,
-        data: new Date().toLocaleString('pt-BR')
-      };
-      const linha = Object.values(dados).join(';') + '\n';
-      const blob = new Blob([linha], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'respostas.csv';
-      a.click();
-      URL.revokeObjectURL(url);
-      document.getElementById('status').textContent = 'Diagnóstico gerado e salvo localmente (respostas.csv)';
-      form.reset();
-    });
-  </script>
 </body>
 </html>
